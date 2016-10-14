@@ -21,28 +21,14 @@ while connected:
     temp = str.split(response, "\n")
     response = temp.pop()
     print(response)
-    for line in temp:
-        if (line[0] == "PING"):
-            s.send("PONG %s\r\n" % line[1])
-            print("PONG'ed")
-        else:
-            parts = str.split(line, ":")
-            print("else")
-            for line in temp:
-                print(line)
-                user = getUser(line)
-                message = getMessage(line)
-                print (user + " typed :" + message)
-        time.sleep(1/RATE)
-
-    # if response == "PING :tmi.twitch.tv\r\n":
-    #     s.send("PONG :tmi.twitch.tv\r\n".encode("utf-8"))
-    #     print("PONG'ed")
-    # else:
-    #     print("else")
-    #     for line in temp:
-    #         print(line)
-    #         user = getUser(line)
-    #         message = getMessage(line)
-    #         print (user + " typed :" + message)
-    # time.sleep(1/RATE)
+    if response == "PING :tmi.twitch.tv\r\n":
+        s.send("PONG :tmi.twitch.tv\r\n".encode("utf-8"))
+        print("PONG'ed")
+    else:
+        print("else")
+        for line in temp:
+            print(line)
+            user = getUser(line)
+            message = getMessage(line)
+            print (user + " typed: " + message)
+    time.sleep(1/RATE)

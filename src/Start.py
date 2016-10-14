@@ -19,8 +19,8 @@ def joinRoom(s):
 
 
 def loadingComplete(line):
-    #if ("End of /NAMES list" in line):
-    if (">" in line):
+    if ("End of /NAMES list" in line):
+    #if (">" in line):
         return False
     else:
         return True

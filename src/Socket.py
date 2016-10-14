@@ -20,7 +20,7 @@ def openSocket():
         #s.send("NICK?" + USER + "\r\n")
         s.send("NICK {}\r\n".format(USER).encode("utf-8"))
         #s.send("JOIN #" + CHANNEL + "\r\n")
-        s.send("JOIN # {}\r\n".format(CHANNEL).encode("utf-8"))
+        s.send("JOIN #{}\r\n".format(CHANNEL).encode("utf-8"))
         return s, True
     except Exception as e:
         print(str(e))

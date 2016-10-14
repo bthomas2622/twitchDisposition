@@ -4,7 +4,7 @@ Created on Oct 11, 2016
 """
 
 #HOST is directory to connect to
-HOST = "irc.twitch.tv"
+HOST = "irc.chat.twitch.tv"
 #PORT is default for Twitch.tv
 PORT = 6667
 #PASS is unique bot authentication, this is from benbottest

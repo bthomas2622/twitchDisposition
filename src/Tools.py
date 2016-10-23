@@ -1,3 +1,8 @@
+from Vader import SentimentIntensityAnalyzer
+from nltk import tokenize
+import nltk
+nltk.download('punkt')
+
 #Read functions
 def getUser(line):
     parsedLine = line.split(":", 2)
@@ -12,17 +17,15 @@ def getMessage(line):
     return message
 
 def textAnalysis(history, volume):
-    totalWords = 0.0
-    upperCase = 0.0
-    lowerCase = 0.0
+    sentences = [] #master sentence list for a sample chat analysis
+    sid = SentimentIntensityAnalyzer()
     for message in history:
-        words = message.split(" ")
-        totalWords += len(words)
-        for word in words:
-            if word[0].isupper():
-                upperCase += 1
-            else:
-                lowerCase += 1
-    avgWords = round(totalWords / volume, 1)
-    capPercentage = int(((upperCase / lowerCase)*100))
-    return avgWords, capPercentage
+        sent_list = tokenize.sent_tokenize(message) #sent_tokenize takes a paragraph and turns i into list of sentences
+        sentences.extend(sent_list)
+    for sentence in sentences:
+        print(sentence)
+        ss = sid.polarity_scores(sentence)
+        for k in sorted(ss):
+            print('{0}: {1}, '.format(k, ss[k]), end='')
+        print()
+    return

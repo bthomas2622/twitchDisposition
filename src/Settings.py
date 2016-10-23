@@ -16,4 +16,4 @@ CHANNEL = "freebrunch"
 #maximum send rate of bot
 RATE = (20/30) #messages per second
 #volume of message cache for analysis
-CACHE = 10
+CACHE = 1

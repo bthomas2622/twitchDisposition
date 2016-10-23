@@ -22,7 +22,7 @@ while connected:
     response = response + s.recv(1024).decode("utf-8")
     temp = str.split(response, "\n")
     response = temp.pop()
-    print("Temp: " + temp)
+    print("Temp: " + str(temp))
     #if response == "PING :tmi.twitch.tv\r\n":
     if temp[0] == "PING :tmi.twitch.tv\r":
         s.send("PONG :tmi.twitch.tv\r\n".encode("utf-8"))
@@ -35,9 +35,9 @@ while connected:
             message = getMessage(line)
             messageHistory.append(message)
             if len(messageHistory) == CACHE:
-                wordCountAvg, capPercent = textAnalysis(messageHistory, CACHE)
+                textAnalysis(messageHistory, CACHE)
                 messageHistory.clear()
-                print("Average Word Count: " + str(wordCountAvg))
-                print("Percent Capitlized: " + str(capPercent) + "%")
+                #print("Average Word Count: " + str(wordCountAvg))
+                #print("Percent Capitlized: " + str(capPercent) + "%")
             print (user + " typed: " + message)
     time.sleep(1/RATE)

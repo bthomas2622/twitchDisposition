@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="15bfcf90-04d6-409f-ba84-deb50d9e68ee" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Run.py" afterPath="$PROJECT_DIR$/src/Run.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tools.py" afterPath="$PROJECT_DIR$/src/Tools.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Vader.py" afterPath="$PROJECT_DIR$/src/Vader.py" />
     </list>
     <ignored path="Twitch Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,10 +22,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Run.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Run.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="340">
               <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
               <folding>
                 <element signature="e#47#58#0" expanded="true" />
@@ -49,12 +46,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Vader.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Vader.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Vader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="289">
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+              <folding>
+                <element signature="e#937#950#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,6 +176,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="twitchChatbot" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twitchChatbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twitchChatbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -496,7 +505,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#937#950#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -758,14 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
@@ -778,10 +781,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="340">
           <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
           <folding>
             <element signature="e#47#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Vader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding>
+            <element signature="e#937#950#0" expanded="true" />
           </folding>
         </state>
       </provider>

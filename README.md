@@ -1,5 +1,4 @@
-Ben Thomas 
-Twich Sentiment Analysis Chatbot 
+Ben Thomas - Twich Sentiment Analysis Chatbot 
 **Twitch Disposition**
 ===============================
 

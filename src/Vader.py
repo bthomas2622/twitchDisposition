@@ -6,7 +6,7 @@
 #         Ewan Klein <ewan@inf.ed.ac.uk> (modifications)
 #         Pierpaolo Pantone <24alsecondo@gmail.com> (modifications)
 #         George Berry <geb97@cornell.edu> (modifications)
-# URL: <http://nltk.org/>
+# URL: <http://nltk.org/>, https://github.com/cjhutto/vaderSentiment
 # For license information, see LICENSE.TXT
 #
 # Modifications to the original VADER code have been made in order to

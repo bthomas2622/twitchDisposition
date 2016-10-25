@@ -35,9 +35,8 @@ while connected:
             message = getMessage(line)
             messageHistory.append(message)
             if len(messageHistory) == CACHE:
-                textAnalysis(messageHistory, CACHE)
+                intAvg, neuAvg, negAvg, posAvg = textAnalysis(messageHistory, CACHE)
                 messageHistory.clear()
-                #print("Average Word Count: " + str(wordCountAvg))
-                #print("Percent Capitlized: " + str(capPercent) + "%")
-            print (user + " typed: " + message)
+                print("Avg Intensity: " + str(intAvg) + "  Avg Neutrality: " + str(neuAvg) + "  Avg Negativity: " + str(negAvg) + "  Avg Positivity: " + str(posAvg))
+            print(user + " typed: " + message)
     time.sleep(1/RATE)

@@ -1,9 +1,11 @@
-Ben Thomas Twich Sentiment Analysis Chatbot - **Twitch Emotimeter**
+Ben Thomas 
+Twich Sentiment Analysis Chatbot 
+**Twitch Disposition**
 ===============================
 
 # **About**
 
-Twitch Emotimeter is a **Twich Chatbot** that performs sentimental analysis on the chat in a given Twitch channel. It does this through Twitch's Chat API and the use of **VADER** (Valence Aware Dictionary and sEntiment Reasoner) within the **Natural Language Toolkit**.
+**"Twitch Disposition"** is a **Twich Chatbot** that performs sentimental analysis on the chat in a given Twitch channel. It does this through Twitch's Chat API and the use of **VADER** (Valence Aware Dictionary and sEntiment Reasoner) within the **Natural Language Toolkit**.
 
 ## VADER
 
@@ -27,7 +29,7 @@ TBD
 
 ###### Tools
 
-Twitch Emotimeter was programmed through Python 3.5. The NLTK Python platform was utilized for its VADER analysis tools. 
+"Twitch Disposition" was programmed through Python 3.5. The NLTK Python platform was utilized for its VADER analysis tools. 
 
 ###### Design
 

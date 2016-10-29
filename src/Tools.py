@@ -19,7 +19,7 @@ def getMessage(line):
 def textAnalysis(history, volume):
     sentences = [] #master sentence list for a sample chat analysis
     sid = SentimentIntensityAnalyzer()
-    intensity = 0.0 #sentiment intensity, known as compound in VADER
+    net = 0.0 #sentiment net feeling, known as compound in VADER
     pos = 0.0 #sentiment positivity
     neg = 0.0 #sentiment negativity
     neu = 0.0 #sentiment nuetrality
@@ -29,11 +29,11 @@ def textAnalysis(history, volume):
     for sentence in sentences:
         print(sentence)
         ss = sid.polarity_scores(sentence)
-        intensity += ss["compound"]
+        net += ss["compound"] #Compound is a range of -1 (extremely negative) to 1 (extremely positive)
         neu += ss["neu"]
         neg += ss["neg"]
         pos += ss["pos"]
         # for k in sorted(ss):
         #     print('{0}: {1}, '.format(k, ss[k]), end='')
         # print()
-    return intensity/len(sentences), neu/len(sentences), neg/len(sentences), pos/len(sentences) #returning the average values of sentiment for inputted text
+    return net/len(sentences), neu/len(sentences), neg/len(sentences), pos/len(sentences) #returning the average values of sentiment for inputted text

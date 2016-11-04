@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="15bfcf90-04d6-409f-ba84-deb50d9e68ee" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PyQtTesting.py" afterPath="$PROJECT_DIR$/src/PyQtTesting.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Run.py" afterPath="$PROJECT_DIR$/src/Run.py" />
     </list>
     <ignored path="Twitch Chatbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,8 +28,8 @@
       <file leaf-file-name="Run.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+            <state relative-caret-position="221">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="e#52#63#0" expanded="true" />
               </folding>
@@ -37,9 +40,11 @@
       <file leaf-file-name="PyQtTesting.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PyQtTesting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="60">
+              <caret line="95" column="14" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="14" />
+              <folding>
+                <element signature="e#77#99#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,15 +132,15 @@
         <option value="$PROJECT_DIR$/src/Settings.py" />
         <option value="$PROJECT_DIR$/src/Vader.py" />
         <option value="$PROJECT_DIR$/src/Tools.py" />
-        <option value="$PROJECT_DIR$/src/Run.py" />
         <option value="$PROJECT_DIR$/PyQtTesting.py" />
         <option value="$PROJECT_DIR$/src/PyQtTesting.py" />
+        <option value="$PROJECT_DIR$/src/Run.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="925" />
-    <option name="width" value="1002" />
+    <option name="x" value="853" />
+    <option name="width" value="1074" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -248,7 +253,7 @@
       <recent name="C:\Users\bthom\Documents\twitchChatbot\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.PyQtTesting">
+  <component name="RunManager" selected="Python.Run">
     <configuration default="false" name="Run" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -279,6 +284,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="twitchChatbot" />
       <option name="SCRIPT_NAME" value="C:\Users\bthom\Documents\twitchChatbot\src\PyQtTesting.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="PyQtTesting (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="twitchChatbot" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/PyQtTesting.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -434,15 +456,17 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.Tools" />
       <item index="1" class="java.lang.String" itemvalue="Python.Run" />
       <item index="2" class="java.lang.String" itemvalue="Python.PyQtTesting" />
+      <item index="3" class="java.lang.String" itemvalue="Python.PyQtTesting (1)" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.PyQtTesting" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Run" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.Run" />
+        <item index="1" class="java.lang.String" itemvalue="Python.PyQtTesting (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.PyQtTesting" />
       </list>
     </recent_temporary>
   </component>
@@ -460,10 +484,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="925" y="0" width="1002" height="1047" extended-state="0" />
+    <frame x="853" y="0" width="1074" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26037344" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.242278" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -923,14 +947,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NLTKcompat.py" />
     <entry file="file://$PROJECT_DIR$/src/NLTKdata.py" />
-    <entry file="file://$PROJECT_DIR$/src/Settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Vader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -951,16 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
-          <folding>
-            <element signature="e#52#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pyqtgraph/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -971,11 +977,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#52#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PyQtTesting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="60">
+          <caret line="95" column="14" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="14" />
+          <folding>
+            <element signature="e#77#99#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

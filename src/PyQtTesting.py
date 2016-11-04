@@ -33,7 +33,7 @@ def update1():
 
 
 # 2) Allow data to accumulate. In these examples, the array doubles in length
-#    whenever it is full. 
+#    whenever it is full.
 win.nextRow()
 p3 = win.addPlot()
 p4 = win.addPlot()

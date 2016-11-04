@@ -24,6 +24,9 @@ Thanks to a hands-on guide introducing programming fundamentals alongside topics
 
 [PyQtGraph](http://www.pyqtgraph.org/) is a pure-python graphics and GUI library built on [PyQt4](https://riverbankcomputing.com/software/pyqt/intro) / PySide and [numpy](http://www.numpy.org/). It is intended for use in mathematics / scientific / engineering applications. Despite being written entirely in python, the library is very fast due to its heavy leverage of numpy for number crunching and Qt's GraphicsView framework for fast display. PyQtGraph is distributed under the MIT open-source license. 
 
+Copyright (c) 2012  University of North Carolina at Chapel Hill
+Luke Campagnola (luke.campagnola@gmail.com)
+
 ## How to "Run" 
 
 TBD
@@ -52,6 +55,7 @@ TBD
 * [Twitch API](https://dev.twitch.tv/)
 * [NLTK](http://www.nltk.org/)
 * [VADER](https://github.com/cjhutto/vaderSentiment)
+* [PyQtGraph](http://www.pyqtgraph.org/)
 
 #### Contact Me
 

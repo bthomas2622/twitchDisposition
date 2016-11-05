@@ -17,25 +17,25 @@ import sys
 
 win = pg.GraphicsWindow()
 win.setWindowTitle('Twitch Disposition')
+win.resize(800, 800)
 
 p1 = win.addPlot()
 p2 = win.addPlot()
 data1 = np.random.normal(size=10)
+data2 = np.random.normal(size=10)
 curve1 = p1.plot(data1)
 curve2 = p2.plot(data1)
 ptr1 = 0
 
-if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
-    QtGui.QApplication.instance().exec_()
-
-def update(neg):
+def update(neg, pos):
     global data1, curve1, ptr1
     data1[:-1] = data1[1:]  # shift data in the array one sample left
     # (see also: np.roll)
     data1[-1] = neg
-    curve1.setData(data1)
-
+    data2[-1] = pos
     ptr1 += 1
+    curve1.setData(data1)
+    curve1.setPos(ptr1,0)
     curve2.setData(data1)
     curve2.setPos(ptr1, 0)
 
@@ -49,6 +49,10 @@ neuTotal = 0.0
 negTotal = 0.0
 posTotal = 0.0
 avgTotal = 0.0
+netAvg = 0.0
+neuAvg = 0.0
+negAvg = 0.0
+posAvg = 0.0
 start = time.time()
 avgElapsedBtwnMessageList = [5, 5, 5, 5, 5]
 
@@ -100,15 +104,7 @@ while connected:
                 print("Avg Net Emotion: " + str(netAvg) + "  Avg Neutrality: " + str(neuAvg) + "  Avg Negativity: " + str(negAvg) + "  Avg Positivity: " + str(posAvg))
                 print("Total Avg Net Emotion: " + str(netTotal/avgTotal) + " Total Avg Neutrality: " + str(neuTotal/avgTotal) + " Total Avg Negativity: " + str(negTotal/avgTotal) + " Total Avg Positivity: " + str(posTotal/avgTotal))
             print(user + " typed: " + message)
-    time.sleep(1/RATE)
+        update(negAvg, posAvg)
+        pg.QtGui.QApplication.processEvents()
 
-# timer = pg.QtCore.QTimer()
-# timer.timeout.connect(update)
-# timer.start(50)
-
-## Enable fault handling to give more helpful error messages on crash.
-try:
-    import faulthandler
-    faulthandler.enable()
-except ImportError:
-    pass
+win.close()

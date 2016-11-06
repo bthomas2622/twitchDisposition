@@ -19,25 +19,45 @@ win = pg.GraphicsWindow()
 win.setWindowTitle('Twitch Disposition')
 win.resize(800, 800)
 
-p1 = win.addPlot()
-p2 = win.addPlot()
+p1 = win.addPlot(title="Intensity")
+p2 = win.addPlot(title="Neutrality")
+p3 = win.addPlot(title="Negativity")
+p4 = win.addPlot(title="Positivity")
+p1.setYRange(-1.25, 1.25, padding=0)
+p1.setLabel("bottom", "Chat")
+p2.setYRange(-.25, 1.25, padding=0)
+p3.setYRange(-.25, 1.25, padding=0)
+p4.setYRange(-.25, 1.25, padding=0)
 data1 = np.random.normal(size=10)
 data2 = np.random.normal(size=10)
+data3 = np.random.normal(size=10)
+data4 = np.random.normal(size=10)
 curve1 = p1.plot(data1)
-curve2 = p2.plot(data1)
+curve2 = p2.plot(data2)
+curve3 = p3.plot(data3)
+curve4 = p4.plot(data4)
 ptr1 = 0
 
-def update(neg, pos):
-    global data1, curve1, ptr1
+def update(net, neu, neg, pos):
+    global data1, data2, data3, data4, curve1, curve2, curve3, curve4, ptr1
     data1[:-1] = data1[1:]  # shift data in the array one sample left
+    data2[:-1] = data2[1:]
+    data3[:-1] = data3[1:]
+    data4[:-1] = data4[1:]
     # (see also: np.roll)
-    data1[-1] = neg
-    data2[-1] = pos
+    data1[-1] = net
+    data2[-1] = neu
+    data3[-1] = neg
+    data4[-1] = pos
     ptr1 += 1
     curve1.setData(data1)
     curve1.setPos(ptr1,0)
-    curve2.setData(data1)
+    curve2.setData(data2)
     curve2.setPos(ptr1, 0)
+    curve3.setData(data3)
+    curve3.setPos(ptr1, 0)
+    curve4.setData(data4)
+    curve4.setPos(ptr1, 0)
 
 #create socket to send information and receive information from chat
 s, connected = openSocket()
@@ -79,13 +99,13 @@ while connected:
         print(str("Last 5 time between messages: " + str(avgElapsedBtwnMessageList)))
         avgElapsedBtwnMessage = (sum(avgElapsedBtwnMessageList)/len(avgElapsedBtwnMessageList)*1.0)
         if avgElapsedBtwnMessage > 5:
-            CACHE = 2
+            CACHE = 1
         elif elapsedBtwnMessage < 0.1:
-            CACHE = 100
+            CACHE = 1
         elif avgElapsedBtwnMessage < 0.5:
-            CACHE = 20
+            CACHE = 1
         else:
-            CACHE = 10
+            CACHE = 1
         print("Message history cache length: " + str(CACHE))
         for line in temp:
             print("Line " + line)
@@ -104,7 +124,7 @@ while connected:
                 print("Avg Net Emotion: " + str(netAvg) + "  Avg Neutrality: " + str(neuAvg) + "  Avg Negativity: " + str(negAvg) + "  Avg Positivity: " + str(posAvg))
                 print("Total Avg Net Emotion: " + str(netTotal/avgTotal) + " Total Avg Neutrality: " + str(neuTotal/avgTotal) + " Total Avg Negativity: " + str(negTotal/avgTotal) + " Total Avg Positivity: " + str(posTotal/avgTotal))
             print(user + " typed: " + message)
-        update(negAvg, posAvg)
+        update(netAvg, neuAvg, negAvg, posAvg)
         pg.QtGui.QApplication.processEvents()
 
 win.close()

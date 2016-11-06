@@ -19,7 +19,7 @@ def getMessage(line):
 def textAnalysis(history, volume):
     sentences = [] #master sentence list for a sample chat analysis
     sid = SentimentIntensityAnalyzer()
-    net = 0.0 #sentiment net feeling, known as compound in VADER
+    net = 0.0 #sentiment intensity, known as compound in VADER, range of -1 (extremely negative) to 1 (extremely positive)
     pos = 0.0 #sentiment positivity
     neg = 0.0 #sentiment negativity
     neu = 0.0 #sentiment nuetrality

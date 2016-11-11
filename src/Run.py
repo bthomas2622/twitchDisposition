@@ -19,7 +19,7 @@ win = pg.GraphicsWindow()
 win.setWindowTitle('Twitch Disposition')
 win.resize(800, 800)
 
-p1 = win.addPlot(title="Intensity")
+p1 = win.addPlot(title="Net Sentiment")
 p2 = win.addPlot(title="Neutrality")
 win.nextRow()
 p3 = win.addPlot(title="Negativity")
@@ -27,37 +27,36 @@ p4 = win.addPlot(title="Positivity")
 p1.setYRange(-1.25, 1.25, padding=0)
 p1.setLabel("bottom", "Chat")
 p2.setYRange(-.25, 1.25, padding=0)
-p3.setYRange(-.25, 1.25, padding=0)
+p3.setYRange(-1.25, .25, padding=0)
 p4.setYRange(-.25, 1.25, padding=0)
 # data1 = np.random.normal(size=10)
-data1 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
-data2 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
-data3 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
-data4 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+data1 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+data2 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+data3 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+data4 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
 curve1 = p1.plot(data1)
 curve2 = p2.plot(data2)
 curve3 = p3.plot(data3)
 curve4 = p4.plot(data4)
 ptr1 = 0
 
-def update(net, neu, neg, pos):
+def update(net, neu, neg, pos, msgCacheLength):
     global data1, data2, data3, data4, curve1, curve2, curve3, curve4, ptr1
     print("Net: " + str(net) + " Neu: " + str(neu) + " Neg: " + str(neg))
     # data1[:-1] = data1[1:]  # shift data in the array one sample left
-    data1 = np.roll(data1, 1) #shift data in the array one to the left
-    data2[:-1] = data2[1:]
-    data3[:-1] = data3[1:]
-    data4[:-1] = data4[1:]
-    # (see also: np.roll)
-    data1[9] = net #replace oldest data point with new value
-    data2[-1] = neu
-    data3[-1] = neg
-    data4[-1] = pos
-    ptr1 += 1
-    print(data1)
-    print(data2)
-    print(data3)
-    print(data4)
+    data1 = np.roll(data1, -1) #shift data in the array one to the left
+    data2 = np.roll(data2, -1) #shift data in the array one to the left
+    data3 = np.roll(data3, -1) #shift data in the array one to the left
+    data4 = np.roll(data4, -1) #shift data in the array one to the left
+    data1[data1.shape[0] - 1] = net #replace oldest data point with new value, shape of an array is a tuple of integers giving the size of the array along each dimension. this is 1 dimension array
+    data2[data2.shape[0] - 1] = neu
+    data3[data3.shape[0] - 1] = neg*(-1.0)
+    data4[data4.shape[0] - 1] = pos
+    ptr1 += msgCacheLength #increment the plot by the volume of messages received
+    # print(data1)
+    # print(data2)
+    # print(data3)
+    # print(data4)
     curve1.setData(data1)
     curve1.setPos(ptr1,0)
     curve2.setData(data2)
@@ -132,7 +131,7 @@ while connected:
                 print("Avg Net Emotion: " + str(netAvg) + "  Avg Neutrality: " + str(neuAvg) + "  Avg Negativity: " + str(negAvg) + "  Avg Positivity: " + str(posAvg))
                 print("Total Avg Net Emotion: " + str(netTotal/avgTotal) + " Total Avg Neutrality: " + str(neuTotal/avgTotal) + " Total Avg Negativity: " + str(negTotal/avgTotal) + " Total Avg Positivity: " + str(posTotal/avgTotal))
             print(user + " typed: " + message)
-        update(netAvg, neuAvg, negAvg, posAvg)
+        update(netAvg, neuAvg, negAvg, posAvg, CACHE)
         pg.QtGui.QApplication.processEvents()
 
 win.close()

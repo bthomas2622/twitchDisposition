@@ -21,6 +21,7 @@ win.resize(800, 800)
 
 p1 = win.addPlot(title="Intensity")
 p2 = win.addPlot(title="Neutrality")
+win.nextRow()
 p3 = win.addPlot(title="Negativity")
 p4 = win.addPlot(title="Positivity")
 p1.setYRange(-1.25, 1.25, padding=0)
@@ -28,10 +29,11 @@ p1.setLabel("bottom", "Chat")
 p2.setYRange(-.25, 1.25, padding=0)
 p3.setYRange(-.25, 1.25, padding=0)
 p4.setYRange(-.25, 1.25, padding=0)
-data1 = np.random.normal(size=10)
-data2 = np.random.normal(size=10)
-data3 = np.random.normal(size=10)
-data4 = np.random.normal(size=10)
+# data1 = np.random.normal(size=10)
+data1 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+data2 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+data3 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+data4 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
 curve1 = p1.plot(data1)
 curve2 = p2.plot(data2)
 curve3 = p3.plot(data3)
@@ -40,16 +42,22 @@ ptr1 = 0
 
 def update(net, neu, neg, pos):
     global data1, data2, data3, data4, curve1, curve2, curve3, curve4, ptr1
-    data1[:-1] = data1[1:]  # shift data in the array one sample left
+    print("Net: " + str(net) + " Neu: " + str(neu) + " Neg: " + str(neg))
+    # data1[:-1] = data1[1:]  # shift data in the array one sample left
+    data1 = np.roll(data1, 1) #shift data in the array one to the left
     data2[:-1] = data2[1:]
     data3[:-1] = data3[1:]
     data4[:-1] = data4[1:]
     # (see also: np.roll)
-    data1[-1] = net
+    data1[9] = net #replace oldest data point with new value
     data2[-1] = neu
     data3[-1] = neg
     data4[-1] = pos
     ptr1 += 1
+    print(data1)
+    print(data2)
+    print(data3)
+    print(data4)
     curve1.setData(data1)
     curve1.setPos(ptr1,0)
     curve2.setData(data2)

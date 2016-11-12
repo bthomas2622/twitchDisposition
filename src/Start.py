@@ -15,7 +15,7 @@ def joinRoom(s):
         for line in temp:
             print(line)
             loading = loadingComplete(line)
-    sendMessage(s, "Successfully joined chat")
+    # sendMessage(s, "Successfully joined chat")
 
 
 def loadingComplete(line):

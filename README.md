@@ -22,32 +22,35 @@ Thanks to a hands-on guide introducing programming fundamentals alongside topics
 
 ### PyQtGraph
 
-[PyQtGraph](http://www.pyqtgraph.org/) is a pure-python graphics and GUI library built on [PyQt4](https://riverbankcomputing.com/software/pyqt/intro) / PySide and [numpy](http://www.numpy.org/). It is intended for use in mathematics / scientific / engineering applications. Despite being written entirely in python, the library is very fast due to its heavy leverage of numpy for number crunching and Qt's GraphicsView framework for fast display. PyQtGraph is distributed under the MIT open-source license. 
+[PyQtGraph](http://www.pyqtgraph.org/) is a pure-python graphics and GUI library built on [PyQt5](https://riverbankcomputing.com/software/pyqt/intro) / PySide and [numpy](http://www.numpy.org/). It is intended for use in mathematics / scientific / engineering applications. Despite being written entirely in python, the library is very fast due to its heavy leverage of numpy for number crunching and Qt's GraphicsView framework for fast display. PyQtGraph is distributed under the MIT open-source license. 
 
 Copyright (c) 2012  University of North Carolina at Chapel Hill
 Luke Campagnola (luke.campagnola@gmail.com)
 
-## How to "Run" 
-
-TBD
-
-## How it was programmed
-
-###### Tools
-
-"Twitch Disposition" was programmed through Python 3.5. The NLTK Python platform was utilized for its VADER analysis tools. 
-
-###### Design
-
-TBD
-
 #### Directory Structure
 
-TBD
+All project files are located in the **"src"** source folder.
+The **"pyqtgraph"** folder holds the pyqtgraph graphics library utilized.
+
+* **Run.py** is the implementation of the program. It initializes and updates the graphics window while maintaing the twitch chatbot connection.  
+* **Settings.py** holds the twitch chat API settings like host name, port #, API authentification number, channel to connect to, etc. 
+* **Socket.py** creates the socket object that provides the communication mechanism between script and IRC channel. 
+* **Start.py** contains the function for the twitch bot to join chat room. 
+* **Tools.py** contains the analysis tools that the bot applies to chat entries. These include simple tasks like findind out which user said what and complicated tasks like applying VADER to messages. 
+* **Vader.py** is the lexicon and rule-based sentiment analysis tool that analyzes text samples and spits out metrics. Open sourced under MIT license. 
+* **vader_sentiment_lexicon.txt** is the word bank the VADER tool relys on for evaluating messages. For expample if the word "hate" is fed through VADER tool, it will find the word in the lexicon.txt file and see that it is associated with negativity. 
+
+## How to "Run" 
+
+Twitch Disposition is not compiled into an executable. The best way to run the program is to open the "src" folder in your Python IDE of choice. From here there are three steps to get the program running. 
+1. Edit the "CHANNEL" variable "Settings.py" file to match the twitch streamer whose chat room you would like to analyze. NOTE the channel name needs to be in all lowercase. 
+2. Ensure you have all the dependent packages for your Python Interpreter (PyQt5, nltk, numpy).
+3. Run the "Run.py" file. 
+When you are finished stop the script through your Python IDE. 
 
 #### Contributing
 
-TBD
+Anyone is welcome to re-use the code used in this project.
 
 #### References
 
@@ -63,4 +66,4 @@ For any questions please email me at _bthomas2622@gmail.com_
 
 #### License
 
-TBD
+The content of this repository is not licensed. 

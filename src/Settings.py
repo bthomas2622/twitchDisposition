@@ -10,9 +10,9 @@ PORT = 6667
 #PASS is unique bot authentication, this is from benbottest
 PASS = "oauth:1ttapsvt9h0dpxifp5v8chzr7q263a"
 #name of bot
-USER = "benbottest"
+USER = "twitchDisposition"
 #twich channel connecting to
-CHANNEL = "freebrunch"
+CHANNEL = "channelname"
 #maximum send rate of bot
 RATE = (20/30) #messages per second
 #volume of message cache for analysis

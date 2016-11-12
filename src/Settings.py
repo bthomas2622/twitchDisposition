@@ -9,8 +9,8 @@ HOST = "irc.chat.twitch.tv"
 PORT = 6667
 #PASS is unique bot authentication, this is from benbottest
 PASS = "oauth:1ttapsvt9h0dpxifp5v8chzr7q263a"
-#name of bot
-USER = "twitchDisposition"
+#name of bot, cannot change
+USER = "benbottest"
 #twich channel connecting to
 CHANNEL = "channelname"
 #maximum send rate of bot

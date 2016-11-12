@@ -43,9 +43,11 @@ The **"pyqtgraph"** folder holds the pyqtgraph graphics library utilized.
 ## How to "Run" 
 
 Twitch Disposition is not compiled into an executable. The best way to run the program is to open the "src" folder in your Python IDE of choice. From here there are three steps to get the program running. 
-1.  Edit the "CHANNEL" variable "Settings.py" file to match the twitch streamer whose chat room you would like to analyze. NOTE the channel name needs to be in all lowercase. 
-2.  Ensure you have all the dependent packages for your Python Interpreter (PyQt5, nltk, numpy).
-3.  Run the "Run.py" file. 
+
+1. Edit the "CHANNEL" variable "Settings.py" file to match the twitch streamer whose chat room you would like to analyze. NOTE the channel name needs to be in all lowercase. 
+2. Ensure you have all the dependent packages for your Python Interpreter (PyQt5, nltk, numpy).
+3. Run the "Run.py" file. 
+
 When you are finished stop the script through your Python IDE. 
 
 #### Contributing
